@@ -14,7 +14,7 @@
                 <a :href="lien_salut">{{ title }}</a> <!-- v-bind qui peut être raccourci en : établit une liaison entre la donnée lien_salut et href -->
             </h1>
             <ul>
-                <li v-for="(member, key) in family">{{ key }} - {{ member.name }}</li>
+                <li v-for="(member, k) in family" :key="member.name">{{ k }} - {{ member.name }}</li>
             </ul>
             <!-- on boucle sur le tableau avec v-for. On crée une variable temporaire member pour les éléments du tableau -->
             <!-- On peut récupérer plusieurs méta données d'un élément, comme ici plus haut, l'index de l'élément du tableau ou encore la clé dans un objet -->
