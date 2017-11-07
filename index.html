@@ -13,12 +13,14 @@
             <h1>
                 <a :href="lien_salut">{{ title }}</a> <!-- v-bind qui peut être raccourci en : établit une liaison entre la donnée lien_salut et href -->
             </h1>
-            <ul>
-                <li v-for="(member, k) in family" :key="member.name">{{ k }} - {{ member.name }}</li>
-            </ul>
-            <!-- on boucle sur le tableau avec v-for. On crée une variable temporaire member pour les éléments du tableau -->
-            <!-- On peut récupérer plusieurs méta données d'un élément, comme ici plus haut, l'index de l'élément du tableau ou encore la clé dans un objet -->
-            <!-- Quand on a des objets imbriqués, on peut utiliser le . pour récupérer une clé à l'intérieur de l'objet imbriqué -->
+            <form action="#">
+                <label for="test">Champ de texte</label>
+                <input type="text" name="test" id="test" v-model="input_content" />
+            </form>
+
+            <p>{{ input_content }}</p>
+
+            <!-- v-model crée une liaison bi-directionnelle entre les données et le modèle, ça regroupe v-bind et v-on en une seule action -->
         </div>
 
         <script type="text/javascript">
@@ -27,17 +29,7 @@
                 data: {
                     title: 'Hello world !',
                     lien_salut: 'http://www.google.be',
-                    show: false,
-                    family: {
-                        me:
-                            { name: 'Anne' },
-                        lover:
-                            { name: 'Card' },
-                        cat:
-                            { name: 'Argus' },
-                        christmasTree:
-                            { name :'Jean-Paul' }
-                    }
+                    input_content: "test"
                 }
             } )
         </script>
