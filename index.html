@@ -22,8 +22,7 @@
             <p v-show="inputContent">{{ inputContent }}</p>
             <p v-show="inputContent">{{ reversedInputContent }}</p>
 
-            <!-- les données et les méthodes sont proxifiées, ce qui nous permet d'utiliser le this pour accéder à des éléments. -->
-            <!-- les computed properties sont des méthodes spécialisées qui sont mises en cache. Elles ne seront recalculées que si les dépendances de la fonction sont recalculées -->
+            <!-- les hooks sont des points dans le montage des composants vue qui peuvent servir à certains moments. Attention, le nom est toujours le même! Ça fonctionne un peu comme React -->
         </div>
 
         <script type="text/javascript">
