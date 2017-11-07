@@ -1,5 +1,9 @@
 <template>
-  <h1>{{ title }}</h1>
+    <div>
+        <h1>{{ title }}</h1>
+
+        <button @click="emptyTitle()">Reset</button>
+    </div>
 </template>
 
 <script>
@@ -10,8 +14,15 @@
             required: true,
             type: String
          }
-      }
+     },
+     methods: {
+         emptyTitle() {
+            this.$emit( 'clearTitle' );
+         }
+     }
     }
 </script>
 
 <!-- on définit une prop qui est une sorte de porte d'entrée entre le parent et l'enfant -->
+<!-- pour faire une action dans l'enfant qui affecte le parent, il faut utiliser un événement personnalisé dans la méthode -->
+<!-- $emit enregistre cleartitle comme un nouveau type d'événement qu'on peut utiliser -->

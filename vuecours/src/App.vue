@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-        <page-title :title="title"></page-title>
+        <page-title @clearTitle="title=''" :title="title"></page-title>
   </div>
 </template>
 
