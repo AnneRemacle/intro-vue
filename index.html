@@ -20,6 +20,7 @@
             </form>
 
             <p v-show="input_content">{{ input_content }}</p>
+            <p v-show="input_content">{{ input_content.split('').reverse().join('') }}</p>
 
             <!-- les données et les méthodes sont proxifiées, ce qui nous permet d'utiliser le this pour accéder à des éléments. -->
         </div>
