@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-        <page-title :title="title"></page-title>
+        <page-title :title="title">
+            <h2>Un petit essai avec un slot</h2>
+            <p>les slots servent à distribuer du contenu des parents vers les composants enfants</p>
+        </page-title>
   </div>
 </template>
 

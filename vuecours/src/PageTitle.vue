@@ -3,12 +3,16 @@
         <h1>{{ title }}</h1>
 
         <button @click="emptyTitle()">Reset</button>
+
+        <slot>
+            <p>Le contenu par défaut</p>
+        </slot>
     </div>
 </template>
 
 <script>
     import { bus } from './main.js';
-    
+
     export default {
       name: "page-title",
       props: {
