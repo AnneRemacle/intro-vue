@@ -20,9 +20,10 @@
             </form>
 
             <p v-show="input_content">{{ input_content }}</p>
-            <p v-show="input_content">{{ input_content.split('').reverse().join('') }}</p>
+            <p v-show="input_content">{{ reversedInputContent }}</p>
 
             <!-- les données et les méthodes sont proxifiées, ce qui nous permet d'utiliser le this pour accéder à des éléments. -->
+            <!-- les computed properties sont des méthodes spécialisées qui sont mises en cache. Elles ne seront recalculées que si les dépendances de la fonction sont recalculées -->
         </div>
 
         <script type="text/javascript">
@@ -37,6 +38,11 @@
                     resetInput( resetValue, event ) {
                         console.log(event);
                         this.input_content= resetValue;
+                    }
+                },
+                computed: {
+                    reversedInputContent() {
+                        return this.input_content.split('').reverse().join('');
                     }
                 }
             } )
