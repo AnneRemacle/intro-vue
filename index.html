@@ -14,13 +14,18 @@
         </div>
 
         <!-- dans la balise, on peut soit écrire en camelcase, soit avec des tirets, W3C recommande l'utilisation des tirets -->
+        <!-- child est un objet de paramétrage, on aurait pu écrire directement le contenu dans components à l'intérieur de new Vue -->
 
         <script type="text/javascript">
-            Vue.component( 'pageTitle', {
+            const child = {
                 template: `<h1>Le titre de ma page</h1>`
-            } )
+            }
+
             new Vue( {
-                el : '#app'
+                el : '#app',
+                components: {
+                    pageTitle: child
+                }
             } )
         </script>
     </body>
