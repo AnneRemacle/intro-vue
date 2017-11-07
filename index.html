@@ -11,14 +11,13 @@
 
         <div id="app">
             <h1>
-                <a :href="lien_salut">{{ title }}</a> <!-- v-bind qui peut être raccouric en : établit une liaison entre la donnée lien_salut et href -->
+                <a :href="lien_salut">{{ title }}</a> <!-- v-bind qui peut être raccourci en : établit une liaison entre la donnée lien_salut et href -->
             </h1>
-            <template v-if="show">
-                <p>J'apprends Vue</p>
-            </template>
-            <template v-else>
-                <p>Je n'apprends pas Vue</p>
-            </template>
+            <ul>
+                <li v-for="(member, index) in family">{{ index }} - {{ member }}</li>
+            </ul>
+            <!-- on boucle sur le tableau avec v-for. On crée une variable temporaire member pour les éléments du tableau -->
+            <!-- On peut récupérer plusieurs méta données d'un élément, comme ici plus haut, l'index de l'élément du tableau -->
         </div>
 
         <script type="text/javascript">
@@ -27,7 +26,8 @@
                 data: {
                     title: 'Hello world !',
                     lien_salut: 'http://www.google.be',
-                    show: false
+                    show: false,
+                    family: [ 'Anne', 'Card', 'Argus', 'Jean-Paul' ]
                 }
             } )
         </script>
