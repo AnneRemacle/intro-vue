@@ -15,12 +15,12 @@
             </h1>
             <form action="#">
                 <label for="test">Champ de texte</label>
-                <input type="text" name="test" id="test" v-model="input_content" />
+                <input type="text" name="test" id="test" v-model="inputContent" />
                 <button @click="resetInput('', $event)" v-text="`Vider le champ`"></button>
             </form>
 
-            <p v-show="input_content">{{ input_content }}</p>
-            <p v-show="input_content">{{ reversedInputContent }}</p>
+            <p v-show="inputContent">{{ inputContent }}</p>
+            <p v-show="inputContent">{{ reversedInputContent }}</p>
 
             <!-- les données et les méthodes sont proxifiées, ce qui nous permet d'utiliser le this pour accéder à des éléments. -->
             <!-- les computed properties sont des méthodes spécialisées qui sont mises en cache. Elles ne seront recalculées que si les dépendances de la fonction sont recalculées -->
@@ -32,18 +32,21 @@
                 data: {
                     title: 'Hello world !',
                     lien_salut: 'http://www.google.be',
-                    input_content: "test"
+                    inputContent: ""
                 },
                 methods: {
                     resetInput( resetValue, event ) {
                         console.log(event);
-                        this.input_content= resetValue;
+                        this.inputContent= resetValue;
                     }
                 },
                 computed: {
                     reversedInputContent() {
-                        return this.input_content.split('').reverse().join('');
+                        return this.inputContent.split('').reverse().join('');
                     }
+                },
+                created() {
+                    this.inputContent = 'Test';
                 }
             } )
         </script>
