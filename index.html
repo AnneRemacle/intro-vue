@@ -14,10 +14,11 @@
                 <a :href="lien_salut">{{ title }}</a> <!-- v-bind qui peut être raccourci en : établit une liaison entre la donnée lien_salut et href -->
             </h1>
             <ul>
-                <li v-for="(member, index) in family">{{ index }} - {{ member }}</li>
+                <li v-for="(member, key) in family">{{ key }} - {{ member.name }}</li>
             </ul>
             <!-- on boucle sur le tableau avec v-for. On crée une variable temporaire member pour les éléments du tableau -->
-            <!-- On peut récupérer plusieurs méta données d'un élément, comme ici plus haut, l'index de l'élément du tableau -->
+            <!-- On peut récupérer plusieurs méta données d'un élément, comme ici plus haut, l'index de l'élément du tableau ou encore la clé dans un objet -->
+            <!-- Quand on a des objets imbriqués, on peut utiliser le . pour récupérer une clé à l'intérieur de l'objet imbriqué -->
         </div>
 
         <script type="text/javascript">
@@ -27,7 +28,16 @@
                     title: 'Hello world !',
                     lien_salut: 'http://www.google.be',
                     show: false,
-                    family: [ 'Anne', 'Card', 'Argus', 'Jean-Paul' ]
+                    family: {
+                        me:
+                            { name: 'Anne' },
+                        lover:
+                            { name: 'Card' },
+                        cat:
+                            { name: 'Argus' },
+                        christmasTree:
+                            { name :'Jean-Paul' }
+                    }
                 }
             } )
         </script>
