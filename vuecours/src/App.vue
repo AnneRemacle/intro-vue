@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-        <page-title></page-title>
+        <page-title :title="title"></page-title>
   </div>
 </template>
 
@@ -11,6 +11,11 @@
       name: 'app',
       components: {
           PageTitle
+      },
+      data() {
+          return {
+              title: "Hello World!"
+          }
       }
     }
 </script>

@@ -5,10 +5,10 @@
 <script>
     export default {
       name: "page-title",
-      data(){
-        return {
-            title: "Hello world!"
-        }
-      }
+      props: [
+          'title'
+      ]
     }
 </script>
+
+<!-- on définit une prop qui est une sorte de porte d'entrée entre le parent et l'enfant -->
