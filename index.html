@@ -16,14 +16,12 @@
             <form action="#">
                 <label for="test">Champ de texte</label>
                 <input type="text" name="test" id="test" v-model="input_content" />
-                <button @click="input_content=''" v-text="`Vider le champ`"></button>
+                <button @click="resetInput('', $event)" v-text="`Vider le champ`"></button>
             </form>
 
             <p v-show="input_content">{{ input_content }}</p>
 
-            <!-- v-model crée une liaison bi-directionnelle entre les données et le modèle, ça regroupe v-bind et v-on en une seule action -->
-            <!-- @ remplace v-on -->
-            <!-- on peut utiliser v-text pour afficher le texte du bouton -->
+            <!-- les données et les méthodes sont proxifiées, ce qui nous permet d'utiliser le this pour accéder à des éléments. -->
         </div>
 
         <script type="text/javascript">
@@ -33,6 +31,12 @@
                     title: 'Hello world !',
                     lien_salut: 'http://www.google.be',
                     input_content: "test"
+                },
+                methods: {
+                    resetInput( resetValue, event ) {
+                        console.log(event);
+                        this.input_content= resetValue;
+                    }
                 }
             } )
         </script>
