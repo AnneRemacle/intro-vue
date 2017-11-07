@@ -7,6 +7,8 @@
 </template>
 
 <script>
+    import { bus } from './main.js';
+    
     export default {
       name: "page-title",
       props: {
@@ -17,10 +19,10 @@
      },
      methods: {
          emptyTitle() {
-            this.$emit( 'clearTitle' );
-         }
-     }
-    }
+            bus.$emit( 'clearTitle' );
+             }
+        }
+     };
 </script>
 
 <!-- on définit une prop qui est une sorte de porte d'entrée entre le parent et l'enfant -->
