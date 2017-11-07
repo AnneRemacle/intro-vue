@@ -5,9 +5,12 @@
 <script>
     export default {
       name: "page-title",
-      props: [
-          'title'
-      ]
+      props: {
+        title: {
+            required: true,
+            type: String
+         }
+      }
     }
 </script>
 
