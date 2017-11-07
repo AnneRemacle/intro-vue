@@ -16,11 +16,14 @@
             <form action="#">
                 <label for="test">Champ de texte</label>
                 <input type="text" name="test" id="test" v-model="input_content" />
+                <button @click="input_content=''" v-text="`Vider le champ`"></button>
             </form>
 
-            <p>{{ input_content }}</p>
+            <p v-show="input_content">{{ input_content }}</p>
 
             <!-- v-model crée une liaison bi-directionnelle entre les données et le modèle, ça regroupe v-bind et v-on en une seule action -->
+            <!-- @ remplace v-on -->
+            <!-- on peut utiliser v-text pour afficher le texte du bouton -->
         </div>
 
         <script type="text/javascript">
