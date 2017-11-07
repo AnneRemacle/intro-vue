@@ -15,16 +15,20 @@
 
         <!-- dans la balise, on peut soit écrire en camelcase, soit avec des tirets, W3C recommande l'utilisation des tirets -->
         <!-- child est un objet de paramétrage, on aurait pu écrire directement le contenu dans components à l'intérieur de new Vue -->
+        <!-- les données des composants ne peuvent pas être exposées directement dans un objet littéral, elles doivent etre exposées dans un objet qui est retourné par une fonction nommée data -->
 
         <script type="text/javascript">
-            const child = {
-                template: `<h1>Le titre de ma page</h1>`
-            }
-
             new Vue( {
                 el : '#app',
                 components: {
-                    pageTitle: child
+                    pageTitle: {
+                        template: `<h1>{{ title }}</h1>`,
+                        data() {
+                            return {
+                                title: 'Hello world!'
+                            }
+                        }
+                    }
                 }
             } )
         </script>
