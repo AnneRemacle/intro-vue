@@ -32,3 +32,10 @@
 <!-- on définit une prop qui est une sorte de porte d'entrée entre le parent et l'enfant -->
 <!-- pour faire une action dans l'enfant qui affecte le parent, il faut utiliser un événement personnalisé dans la méthode -->
 <!-- $emit enregistre cleartitle comme un nouveau type d'événement qu'on peut utiliser -->
+
+<style scoped >
+    h1 {
+        font-family: "Helvetica Neue", "Arial", "sans serif";
+        color: darkred;
+    }
+</style>
